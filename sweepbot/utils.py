@@ -167,3 +167,63 @@ def save_report(report: dict) -> str:
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
     return str(filepath)
+
+
+def print_parse_summary(report: dict):
+    file_path = report["file"]
+    total = report["total_lines"]
+    flagged = report["flagged"]
+
+    print(_rule())
+    print(f"  {_c('LOG PARSER', Fore.CYAN + Style.BRIGHT)}   {_c(file_path, Style.DIM)}")
+    print(_rule())
+
+    if not report["entries"]:
+        print(_c("\n  No suspicious entries found.\n", Fore.GREEN + Style.BRIGHT))
+        print(_rule("═"))
+        print(f"  {'total scanned':<22}{_c(total, Style.BRIGHT)}")
+        print(_rule("═"))
+        print()
+        return
+
+    _section(f"FLAGGED ENTRIES  ({flagged})")
+
+    for entry in report["entries"]:
+        color = Fore.RED if entry["severity"] == "critical" else Fore.YELLOW
+        rule_label = entry["rule"].upper().replace("_", " ").replace("KEYWORD:", "")
+        rule_tag = _tag(rule_label, color)
+
+        meta = [f"line {entry['line_number']}"]
+        if entry.get("timestamp"):
+            meta.append(entry["timestamp"])
+        if entry.get("source_ip"):
+            meta.append(entry["source_ip"])
+
+        print()
+        print(f"  {rule_tag}   {_c('  ·  '.join(meta), Style.DIM)}")
+        display = entry["line"]
+        if len(display) > 120:
+            display = display[:117] + "..."
+        print(f"  {_c(display, color + Style.DIM)}")
+
+    print()
+    print(_rule("═"))
+    print(f"  {'total scanned':<22}{_c(total, Style.BRIGHT)}")
+    print(f"  {'total flagged':<22}{_c(flagged, Style.BRIGHT)}")
+
+    if report.get("rule_counts"):
+        print()
+        print(_c("  by rule", Style.DIM))
+        for rule, count in sorted(report["rule_counts"].items(), key=lambda x: -x[1]):
+            print(f"  {_c(f'  {rule:<26}', Style.DIM)}{_c(count, Style.BRIGHT)}")
+
+    print(_rule("═"))
+    print()
+
+
+def save_parse_report(report: dict, output_path: str) -> str:
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    return str(path)

